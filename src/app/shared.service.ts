@@ -8,7 +8,7 @@ import { Observable } from 'rxjs';
 export class SharedService {
 
   //implementations et partage de l'url et des fonctionnalités avec c# et angular 
-  readonly APIUrl="http://localhost:50365/api";//url APi c#
+  readonly APIUrl="http://localhost:5000/api";//url APi c#
   readonly PhotoUrl="http://localhost:50365/photos";//url uploader photo
    
   constructor(private http:HttpClient) { }

@@ -18,7 +18,7 @@ export class AddEditEmpComponent implements OnInit {
   PhotoFileName:string;
   PhotoFilePath:string;
 
-  DepartmentList: any=[];
+  DepartmentsList: any=[];
   ngOnInit(): void {
     this.loadDepartmentList();
 
@@ -26,7 +26,7 @@ export class AddEditEmpComponent implements OnInit {
 
   loadDepartmentList(){
      this.service.getAllDepartmentNames().subscribe((data:any)=>{
-              this.DepartmentList=data;
+              this.DepartmentsList=data;
                 this.EmployeeId=this.emp.EmployeeId;
     this.EmployeeName=this.emp.EmployeeName;
     this.Department=this.emp.Department;
@@ -38,7 +38,8 @@ export class AddEditEmpComponent implements OnInit {
   }
   
   addEmployee(){
-    var val={EmployeeId: this.EmployeeId,
+    var val={
+            EmployeeId: this.EmployeeId,
             EmployeeName:this.EmployeeName,
             Department:  this.Department,
             DateOfJoining:this.DateOfJoining,
@@ -49,7 +50,7 @@ export class AddEditEmpComponent implements OnInit {
             });
   }
 
-  UpdateEmployee(){
+  updateEmployee(){
     var val={EmployeeId: this.EmployeeId,
       EmployeeName:this.EmployeeName,
       Department:  this.Department,
